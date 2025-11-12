@@ -16,7 +16,7 @@ Una utilidad para leer valores RGB desde un sensor TCS34725 conectado a una plac
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tuusuario/redneuronalrgb.git
+git clone https://github.com/itsebasvz/redneuronalrgb.git
 cd redneuronalrgb
 ```
 
