@@ -44,34 +44,60 @@ pip install -r requirements.txt
 Crear un archivo `.env` en la raíz con las variables:
 
 Ejemplo (Linux/macOS):
+```
+PUERTO=/dev/ttyUSB0
+BAUDIOS=115200
+ARCHIVO_SALIDA=dataset_colores.csv
+```
 
-▶️ Ejecución del programa
+Ejemplo (Windows):
+```
+PUERTO=COM3
+BAUDIOS=115200
+ARCHIVO_SALIDA=dataset_colores.csv
+```
 
-Conecta tu placa y ejecuta:
-   python recolectar_colores.py
+## Uso
+
+Conectar la placa y ejecutar:
+```bash
+python recolectar_colores.py
+```
 
 Salida esperada:
-   ✅ Conectado a /dev/ttyUSB0
-   Presiona:
-     [l] → limon
-     [p] → platano
-     [f] → fondo
-   Ctrl+C para terminar.
+```
+✅ Conectado a /dev/ttyUSB0
+Presiona:
+    [l] → limon
+    [p] → platano
+    [f] → fondo
+Ctrl+C para terminar.
+```
 
-Al presionar una tecla, se registrará la muestra y al finalizar con Ctrl+C, se guardará el archivo CSV.
+Al presionar una tecla se registra la muestra; al terminar con Ctrl+C se guarda el CSV.
 
-🧩 Estructura del CSV resultante
+## Formato del CSV
 
+Cada fila contiene:
+```
 timestamp | etiqueta | r | g | b
------------|-----------|---|---|---
-2025-11-11T20:31:55 | limon | 1258 | 1684 | 746
+```
+Ejemplo:
+```
+2025-11-11T20:31:55 | limon   | 1258 | 1684 | 746
 2025-11-11T20:32:04 | platano | 1643 | 2156 | 932
+```
 
-🧰 Archivos del proyecto
+## Estructura del proyecto
+```
+-redneuronalrgb/
+-├── recolectar_colores.py
+-├── .env
+-├── .gitignore
+-├── requirements.txt
+-└── README.md
+```
 
-redneuronalrgb/
-├── recolectar_colores.py
-├── .env
-├── .gitignore
-├── requirements.txt
-└── README.md
+## Notas
+- Ajusta `PUERTO` y `BAUDIOS` según tu placa.
+- Añade/filtra etiquetas según las clases que necesites para entrenamiento.
