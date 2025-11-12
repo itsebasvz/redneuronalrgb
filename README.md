@@ -39,24 +39,6 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Configuración (.env)
-
-Crear un archivo `.env` en la raíz con las variables:
-
-Ejemplo (Linux/macOS):
-```
-PUERTO=/dev/ttyUSB0
-BAUDIOS=115200
-ARCHIVO_SALIDA=dataset_colores.csv
-```
-
-Ejemplo (Windows):
-```
-PUERTO=COM3
-BAUDIOS=115200
-ARCHIVO_SALIDA=dataset_colores.csv
-```
-
 ## Uso
 
 Conectar la placa y ejecutar:
