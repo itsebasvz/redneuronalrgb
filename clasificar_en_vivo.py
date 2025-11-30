@@ -93,15 +93,15 @@ def main():
                         # Hacer la predicción
                         prediccion, probabilidades, clases = predecir_fruta(r, g, b)
                         
-                        # Verificar si la confianza es suficiente (umbral de 80%)
+                        # Verificar si la confianza es suficiente (umbral de 70%)
                         confianza_maxima = max(probabilidades)
                         
                         # Mostrar resultados
                         timestamp = datetime.now().strftime("%H:%M:%S")
                         
-                        if confianza_maxima < 0.80:  # Si la confianza es menor al 80%
+                        if confianza_maxima < 0.70:  # Si la confianza es menor al 70%
                             print(f"\n[{timestamp}] RGB({r:4d}, {g:4d}, {b:4d}) → ❓ OBJETO NO RECONOCIDO")
-                            print(f"   Confianza insuficiente (< 80%)")
+                            print(f"   Confianza insuficiente (< 70%)")
                         else:
                             # Crear emoji según la predicción
                             emoji = "🍋" if prediccion == "limon" else "🍎"
