@@ -50,7 +50,8 @@ def main():
     print(f"✅ Conectado a {PUERTO}")
     print("Presiona:")
     print("  [l] → limon")
-    print("  [p] → platano")
+    print("  [m] → manzana")
+    print("  [z] → zanahoria")
     print("  [f] → fondo")
     print("Ctrl+C para terminar.\n")
 
@@ -72,10 +73,10 @@ def main():
             dr, _, _ = select.select([sys.stdin], [], [], 0)
             if dr:
                 tecla = sys.stdin.read(1).lower()
-                if tecla in ["l", "p", "f"] and ultima_linea:
+                if tecla in ["l", "m", "z", "f"] and ultima_linea:
                     rgb = parsear_raw(ultima_linea)
                     if rgb:
-                        etiqueta = {"l": "limon", "p": "platano", "f": "fondo"}[tecla]
+                        etiqueta = {"l": "limon", "m": "manzana", "z": "zanahoria", "f": "fondo"}[tecla]
                         timestamp = datetime.now().isoformat(timespec="seconds")
                         fila = [timestamp, etiqueta, *rgb]
                         datos.append(fila)
