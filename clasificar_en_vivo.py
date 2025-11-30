@@ -52,18 +52,18 @@ def predecir_fruta(r, g, b):
 
 def signal_handler(sig, frame):
     """Maneja Ctrl+C para salir limpiamente."""
-    print("\n🛑 Finalizando clasificación en vivo...")
+    print("\nFinalizando clasificación en vivo...")
     sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
 
 def main():
     print("="*60)
-    print("🍋🍎 CLASIFICADOR DE FRUTAS EN TIEMPO REAL")
+    print("CLASIFICADOR DE FRUTAS EN TIEMPO REAL")
     print("="*60)
     print(f"✅ Conectado a {PUERTO}")
-    print("📡 Esperando datos del sensor TCS34725...")
-    print("👉 Presiona ENTER para clasificar la fruta actual")
+    print(" Esperando datos del sensor TCS34725...")
+    print("Presiona ENTER para clasificar la fruta actual")
     print("Ctrl+C para terminar.\n")
 
     ser = serial.Serial(PUERTO, BAUDIOS, timeout=1)
@@ -111,7 +111,7 @@ def main():
                         for i, clase in enumerate(clases):
                             barra = "█" * int(probabilidades[i] * 20)
                             print(f"   {clase:10s}: {probabilidades[i]:5.1%} {barra}")
-                        print("\n👉 Presiona ENTER para clasificar otra vez...")
+                        print("\nPresiona ENTER para clasificar otra vez...")
 
         except KeyboardInterrupt:
             raise
